@@ -1,10 +1,4 @@
 <?php
-/**
- * includes/header.php
- * ส่วนหัวที่ใช้ร่วมทุกหน้า
- * 
- * วิธีใช้: กำหนด $page_title ก่อน require ไฟล์นี้
- */
 
 if (!isset($page_title)) {
     $page_title = 'Clinic Appointment System';
@@ -35,7 +29,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white mb-4">
     <div class="container">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="./">
             <i class="bi bi-hospital text-primary"></i>
             Clinic System
         </a>
@@ -47,26 +41,26 @@ $current_page = basename($_SERVER['PHP_SELF']);
         <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link <?= $current_page === 'index.php' ? 'active' : '' ?>" 
-                       href="index.php">
+                    <a class="nav-link <?= $current_page === 'index' ? 'active' : '' ?>" 
+                       href="./">
                         <i class="bi bi-calendar-check"></i> นัดวันนี้
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= $current_page === 'patients.php' ? 'active' : '' ?>" 
-                       href="patients.php">
+                    <a class="nav-link <?= $current_page === 'patients' ? 'active' : '' ?>" 
+                       href="patients">
                         <i class="bi bi-people"></i> ผู้ป่วย
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= $current_page === 'appointments.php' ? 'active' : '' ?>" 
-                       href="appointments.php">
+                    <a class="nav-link <?= $current_page === 'appointments' ? 'active' : '' ?>" 
+                       href="appointments">
                         <i class="bi bi-calendar-plus"></i> สร้างนัด
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= $current_page === 'reports.php' ? 'active' : '' ?>" 
-                       href="reports.php">
+                    <a class="nav-link <?= $current_page === 'reports' ? 'active' : '' ?>" 
+                       href="reports">
                         <i class="bi bi-bar-chart"></i> รายงาน
                     </a>
                 </li>
