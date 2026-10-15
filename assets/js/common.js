@@ -180,3 +180,12 @@ function formatTime(dateStr) {
     const minutes = String(d.getMinutes()).padStart(2, '0');
     return `${hours}:${minutes}`;
 }
+
+function formatPhoneDisplay(phone) {
+    if (!phone || phone.length !== 10) {
+        return phone || '';
+    }
+    return phone.substr(0, 3) + '-' 
+         + phone.substr(3, 3) + '-' 
+         + phone.substr(6, 4);
+}
