@@ -1,0 +1,24 @@
+# ============================================
+# Clinic Appointment System — URL Rewrite
+# ลบนามสกุล .php ออกจาก URL
+# ============================================
+
+RewriteEngine On
+
+# ===== 1. ไฟล์/โฟลเดอร์ที่มีอยู่จริง → ใช้เลย =====
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# ===== 2. ยกเว้น /api/ → ใช้ .php ได้ปกติ =====
+RewriteRule ^api/ - [L]
+
+# ===== 3. ลบนามสกุล .php =====
+# /patients   → /patients.php
+# /reports    → /reports.php
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+?)/?$ $1.php [L]
+
+# ===== 4. index.php → / =====
+RewriteCond %{THE_REQUEST} \s/+index\.php[\s?] [NC]
+RewriteRule ^index\.php$ ./ [R=301,L]
