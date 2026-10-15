@@ -156,6 +156,108 @@ body {
     color: #dc3545;
 }
 
+/* ===== Stat Cards (Dashboard) ===== */
+.stat-card {
+    border-left: 4px solid #dee2e6;
+    transition: transform 0.15s;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.stat-total     { border-left-color: #0d6efd; }
+.stat-pending   { border-left-color: #ffc107; }
+.stat-arrived   { border-left-color: #198754; }
+.stat-cancelled { border-left-color: #dc3545; }
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    opacity: 0.15;
+}
+
+.stat-total     .stat-icon { color: #0d6efd; }
+.stat-pending   .stat-icon { color: #ffc107; }
+.stat-arrived   .stat-icon { color: #198754; }
+.stat-cancelled .stat-icon { color: #dc3545; }
+
+.opacity-50 {
+    opacity: 0.5;
+}
+
+/* ===== Reports ===== */
+.status-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #dee2e6;
+}
+
+.status-box i {
+    font-size: 2rem;
+}
+
+.status-pending {
+    border-left-color: #ffc107;
+    background-color: #fff9e6;
+}
+.status-pending i { color: #ffc107; }
+
+.status-arrived {
+    border-left-color: #198754;
+    background-color: #ecf8f1;
+}
+.status-arrived i { color: #198754; }
+
+.status-cancelled {
+    border-left-color: #dc3545;
+    background-color: #fdedef;
+}
+.status-cancelled i { color: #dc3545; }
+
+.status-label {
+    font-size: 0.85rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-count {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Quick range buttons */
+.quick-range {
+    border-radius: 20px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+}
+
+.quick-range:hover,
+.quick-range.active {
+    background-color: #0d6efd;
+    color: white;
+    border-color: #0d6efd;
+}
 /* ===== Responsive ปรับแต่ง ===== */
 @media (max-width: 768px) {
     .navbar-brand {
