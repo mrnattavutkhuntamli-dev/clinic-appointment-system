@@ -4,30 +4,14 @@
  * AJAX API สำหรับจัดการผู้ป่วย (CRUD)
  */
 
-header('Content-Type: application/json; charset=utf-8');
-header('Cache-Control: no-store');
-
 require_once __DIR__ . '/../config/db.php';
 require_once __DIR__ . '/../helpers/phone.php';
 require_once __DIR__ . '/../helpers/hn.php';
-
+require_once __DIR__ . '/../helpers/response.php';
 // ============================================
 // Helper: ส่ง JSON response
 // ============================================
-function respond($success, $data = null, $error = null)
-{
-    $response = ['success' => $success];
-    
-    if ($data !== null) {
-        $response['data'] = $data;
-    }
-    if ($error !== null) {
-        $response['error'] = $error;
-    }
-    
-    echo json_encode($response, JSON_UNESCAPED_UNICODE);
-    exit;
-}
+setJsonHeaders();
 
 // ============================================
 // รับ action จาก request
