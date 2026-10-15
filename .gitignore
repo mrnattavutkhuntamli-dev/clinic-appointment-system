@@ -1,0 +1,18 @@
+# Dependencies
+/vendor/
+/node_modules/
+
+# Environment & Config
+.env
+config.php
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
